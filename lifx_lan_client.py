@@ -3,6 +3,9 @@ from lib import colorTools
 
 lifxlan = LifxLAN()
 
+def discover_devices():
+	return lifxlan.get_lights()
+
 def turn_lights_on():
 	print 'Turn lights on'
 	lifxlan.set_power_all_lights("on", rapid=True)
