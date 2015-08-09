@@ -31,7 +31,7 @@ def reply_with_devices(client, userdata, message):
 	for d in devices:
 		print type(d)
 		print d.get_label()
-		client.publish('devices/new', '{{ "name": "{0}", "type": "light", "subType": "lifx_light" "state": "{1}", "color": "{2}" }}'.format(d.get_label(),d.get_power(),d.get_color()))
+		client.publish('devices/new', '{{ "name": "{0}", "type": "light", "subType": "lifx_light", "state": "{1}", "color": "{2}" }}'.format(d.get_label(),d.get_power(),d.get_color()))
 
 client = mqtt.Client("lifx_controller")
 client.on_connect = on_connect
